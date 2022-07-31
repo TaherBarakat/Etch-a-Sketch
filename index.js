@@ -1,6 +1,14 @@
 const container = document.querySelector(".container");
+const small = document.querySelector("#small");
+const medium = document.querySelector("#medium");
+const large = document.querySelector("#large");
+const eraser = document.querySelector("#eraser");
+const clean = document.querySelector("#clean");
+const black = document.querySelector("#black");
 
-for (let i = 1; i <= 10000; i++) {
+let pixelSize = 32 * 32;
+
+for (let i = 1; i <= pixelSize; i++) {
    const pixel = document.createElement("div");
    pixel.classList.add("pixel");
    container.append(pixel);
@@ -9,5 +17,51 @@ for (let i = 1; i <= 10000; i++) {
       (e) => (e.target.style.backgroundColor = "black")
    );
 }
+let pixel = document.querySelectorAll(".pixel");
 
-console.log(container);
+small.addEventListener("click", function () {
+   console.log(this);
+   pixelSize = 900;
+   pixel.forEach((x) => {
+      x.style.height = "3%";
+      x.style.width = "3%";
+      x.style.backgroundColor = "white";
+   });
+});
+
+medium.addEventListener("click", function () {
+   pixelSize = 500;
+   pixel.forEach((x) => {
+      x.style.height = "5%";
+      x.style.width = "5%";
+      x.style.backgroundColor = "white";
+   });
+});
+
+large.addEventListener("click", function () {
+   pixelSize = 100;
+   pixel.forEach((x) => {
+      x.style.height = "10%";
+      x.style.width = "10%";
+      x.style.backgroundColor = "white";
+   });
+});
+eraser.addEventListener("click", function () {
+   pixel.forEach((x) =>
+      x.addEventListener(
+         "mouseover",
+         (e) => (e.target.style.backgroundColor = "white")
+      )
+   );
+});
+clean.addEventListener("click", () =>
+   pixel.forEach((x) => (x.style.backgroundColor = "white"))
+);
+black.addEventListener("click", () =>
+   pixel.forEach((x) =>
+      x.addEventListener(
+         "mouseover",
+         (e) => (e.target.style.backgroundColor = "black")
+      )
+   )
+);

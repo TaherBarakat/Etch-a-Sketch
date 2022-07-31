@@ -4,26 +4,35 @@
    box-sizing: border-box;
 }
 main {
-   background-color: hsl(0, 0%, 95 %);
+   background-color: hsl(0, 0%, 95);
 }
 .container {
    display: flex;
    align-items: center;
    justify-content: center;
-   padding: 0;
-   margin: 2rem;
-   box-sizing: border-box;
-   display: flex;
    flex-wrap: wrap;
    gap: 0px 0px;
+   margin: 2rem;
    height: 32rem;
    width: 32rem;
+   box-sizing: border-box;
    overflow: hidden;
-   box-shadow: 0px 0px 10px black;
+   box-shadow: rgba(0, 0, 0, 0.414) 0px 0px 8px;
 }
 .pixel {
    background-color: white;
-   height: 0.5rem;
-   width: 0.5rem;
-   /* border: 1px solid black; */
+   height: 10%;
+   width: 10%;
+}
+.small {
+   height: 1%;
+   width: 1%;
+}
+.large {
+   height: 10%;
+   width: 10%;
+}
+.medium {
+   height: 5%;
+   width: 5%;
 }
