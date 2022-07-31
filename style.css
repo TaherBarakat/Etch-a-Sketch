@@ -1,0 +1,29 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+main {
+   background-color: hsl(0, 0%, 95 %);
+}
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0;
+   margin: 2rem;
+   box-sizing: border-box;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0px 0px;
+   height: 32rem;
+   width: 32rem;
+   overflow: hidden;
+   box-shadow: 0px 0px 10px black;
+}
+.pixel {
+   background-color: white;
+   height: 0.5rem;
+   width: 0.5rem;
+   /* border: 1px solid black; */
+}
