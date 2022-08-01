@@ -5,6 +5,7 @@ const large = document.querySelector("#large");
 const eraser = document.querySelector("#eraser");
 const clean = document.querySelector("#clean");
 const black = document.querySelector("#black");
+const rainbow = document.querySelector("#rainbow");
 
 let pixelSize = 32 * 32;
 
@@ -65,3 +66,18 @@ black.addEventListener("click", () =>
       )
    )
 );
+function getRandomColor() {
+   x = Math.random() * 300;
+   y = Math.random() * 300;
+   z = Math.random() * 300;
+
+   return `rgba(${Math.floor(x)},${Math.floor(y)},${Math.floor(z)})`;
+}
+rainbow.addEventListener("click", function () {
+   pixel.forEach((x) =>
+      x.addEventListener(
+         "mouseover",
+         (e) => (e.target.style.backgroundColor = getRandomColor())
+      )
+   );
+});
